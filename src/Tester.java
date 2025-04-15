@@ -17,6 +17,8 @@ public class Tester {
     }
 
     private Method[] getChildMethods(Method[] methods){
+        //We are doing this because the clazz.getMethods() method gets inhertied methods aswell wich we dont want if we are testing one thing
+        //Probably going to add a true or false state disabling and enabling it
         Method[] newMethods = new Method[0];
         for(int i = 0; i < methods.length; i++){
             if(methods[i].getDeclaringClass() == clazz){
